@@ -1,4 +1,3 @@
-var shapes1 = 4
 
 
 class NoPixel_Fleeca{
@@ -41,10 +40,10 @@ class NoPixel_Fleeca{
     create(){
         let real_numbers, impostor_numbers, minigame, group, background_colors, text_colors, types, quiz_numbers;
 
-        real_numbers = this.range(1, shapes1);
+        real_numbers = this.range(1, boxes);
         this.shuffle(real_numbers);
 
-        impostor_numbers = this.range(1, shapes1);
+        impostor_numbers = this.range(1, boxes);
         this.shuffle(impostor_numbers);
 
         minigame = {
@@ -53,7 +52,8 @@ class NoPixel_Fleeca{
             'groups': []
         };
 
-        for(let i = 0; i < shapes1; i++){
+
+        for(let i = 0; i < boxes; i++){
             group = [];
 
             background_colors = [...this.colors];
@@ -83,7 +83,7 @@ class NoPixel_Fleeca{
             minigame['groups'].push(group);
         }
 
-        quiz_numbers = this.range(0, shapes1-1);
+        quiz_numbers = this.range(0, boxes-1);
         this.shuffle(quiz_numbers);
 
         types = [...this.types];
@@ -121,7 +121,7 @@ class NoPixel_Fleeca{
     }
 }
 
-let timer_start, timer_numbers, timer_game, timer_splash, data, speed;
+let timer_start, timer_numbers, timer_game, timer_splash, data, speed, boxes, prompts;
 let mode = 'practice';
 let minigame = new NoPixel_Fleeca();
 let streak = 0;
@@ -144,11 +144,17 @@ let audio_timer = document.querySelector('.timer audio');
 document.querySelector('#speed').addEventListener('input', function(ev){
     document.querySelector('.speed_value').innerHTML = ev.target.value + 's';
 });
+document.querySelector('#boxes').addEventListener('input', function(ev){
+    document.querySelector('.boxes_value').innerHTML = ev.target.value;
+});
+document.querySelector('#prompts').addEventListener('input', function(ev){
+    document.querySelector('.prompts_value').innerHTML = ev.target.value;
+});
 document.querySelectorAll('.game_mode .button').forEach(el => {
     el.addEventListener('click', function(ev){
         let new_mode = ev.target.dataset.mode;
         if(new_mode !== mode){
-            let b = document.querySelector('body').classList;
+            let b = document.querySelector('body').classL21ist;
             b.remove(mode);
             b.add(new_mode);
             document.querySelector('.game_mode .button.active').classList.remove('active');
@@ -184,6 +190,30 @@ document.querySelector('.answer .btn_again').addEventListener('click', function(
     streak = 0;
     reset();
 });
+// Selectors
+
+
+function createBox(n){
+    for(let i=0; i < n; i++){
+        
+
+        let gameblockdiv;
+        let blockcontainer;
+        let info;
+        blockcontainer = document.getElementById('blockcontainer')
+        gameblockdiv = document.createElement('div');
+        gameblockdiv.className = 'group'
+        info='<div class="real_number">&nbsp;</div>             <div class="shape hidden"></div>             <div class="text_color hidden">&nbsp;</div>             <div class="text_shape hidden">&nbsp;</div>             <div class="inner_shape hidden"></div>             <div class="number hidden">&nbsp;</div>'
+        gameblockdiv.innerHTML = info
+
+        blockcontainer.appendChild(gameblockdiv);
+    }
+}
+
+function clearBoxes(){
+    let sel = document.getElementById('blockcontainer')
+    sel.innerHTML = ""
+}
 
 // Process answer
 document.querySelector('#answer').addEventListener('keydown', function(e) {
@@ -264,6 +294,8 @@ let reset = (show_splash = false) => {
     audio_timer.pause();
     audio_timer.currentTime = 0;
 
+    
+
     document.querySelectorAll('.group > div, .timer, .question, .answer, .solution').forEach(el => {
         el.classList.add('hidden');
     });
@@ -299,6 +331,7 @@ let reset = (show_splash = false) => {
     document.querySelector('.solution').classList.add('hidden');
     document.querySelector('#answer').value = '';
 
+
     if(show_splash)
         splash();
     else
@@ -306,7 +339,17 @@ let reset = (show_splash = false) => {
 }
 
 let start = () => {
+    clearBoxes()
+    boxes = document.querySelector('#boxes').value;
     data = minigame.create();
+    createBox(boxes)
+    boxes = boxes
+
+    let miniDiv = document.getElementById('minigame2')
+    let width = 320 * boxes
+    miniDiv.style.width = width.toString() + "px"
+
+
 
     data.groups.forEach(function(group, i) {
         let g = document.querySelectorAll('.groups .group')[i];
@@ -357,7 +400,9 @@ let start = () => {
 
             document.querySelector('#answer').focus({preventScroll: true});
 
+
             speed = document.querySelector('#speed').value;
+            
             document.querySelector(".progress-bar").style.transitionDuration = speed+'s';
             document.querySelector(".progress-bar").style.width = '0px';
             speed *= 1000;

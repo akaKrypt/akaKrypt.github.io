@@ -3,9 +3,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>NoPixel Fleeca Bank Minigame</title>
-    <meta name="description" content="Play the NoPixel Fleeca Bank Minigame to test your speed and get the maximum streak.">
-    <link rel="canonical" href="https://sharkiller.ddns.net/nopixel_minigame/fleeca/" />
+    <title>NP Hacking Simulator</title>
+    <meta name="description" content="Simulator of NP Hacking, based off sharkkiller">
     <meta name="viewport" content="width=device-width, initial-scale=0.4">
     <link rel="icon" type="image/png" href="favicon.ico" sizes="32x32" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/solid.css" crossorigin="anonymous">
@@ -24,8 +23,18 @@
 <div class="options">
     <div class="option speed">
         <label for="speed">Speed:</label>
-        <input id="speed" type="range" value="5" min="3" max="15" autocomplete="off">
-        <div class="speed_value">5s</div>
+        <input id="speed" type="range" value="6" min="3" max="15" autocomplete="off">
+        <div class="speed_value">6s</div>
+    </div>
+    <div class="option boxes">
+        <label for="boxes">Boxes:</label>
+        <input id="boxes" type="range" value="4" min="3" max="12" autocomplete="off">
+        <div class="boxes_value">4</div>
+    </div>
+    <div class="option prompts">
+        <label for="prompts">Prompts:</label>
+        <input id="prompts" type="range" value="3" min="2" max="4" autocomplete="off">
+        <div class="prompts_value">3</div>
     </div>
     <div class="option game_mode" style="display:none">
         <span>Mode:</span>
@@ -51,7 +60,7 @@
             Show question with original numbers</label>
     </div>
 </div>
-<div class="minigame">
+<div class="minigame" id="minigame2">
     <div class="splash">
         <div class="fa hacker">&#xf21b;</div>
         <span class="message">NP Hacking</span>
@@ -60,39 +69,15 @@
             <source src="audio_splash.ogg" type="audio/ogg">
         </audio>
     </div>
-    <div class="groups hidden">
-        <div class="group">
+    <div class="groups hidden" id="blockcontainer">
+        <!-- <div class="group">
             <div class="real_number">&nbsp;</div>
             <div class="shape hidden"></div>
             <div class="text_color hidden">&nbsp;</div>
             <div class="text_shape hidden">&nbsp;</div>
             <div class="inner_shape hidden"></div>
             <div class="number hidden">&nbsp;</div>
-        </div>
-        <div class="group">
-            <div class="real_number">&nbsp;</div>
-            <div class="shape hidden"></div>
-            <div class="text_color hidden">&nbsp;</div>
-            <div class="text_shape hidden">&nbsp;</div>
-            <div class="inner_shape hidden"></div>
-            <div class="number hidden">&nbsp;</div>
-        </div>
-        <div class="group">
-            <div class="real_number">&nbsp;</div>
-            <div class="shape hidden"></div>
-            <div class="text_color hidden">&nbsp;</div>
-            <div class="text_shape hidden">&nbsp;</div>
-            <div class="inner_shape hidden"></div>
-            <div class="number hidden">&nbsp;</div>
-        </div>
-        <div class="group">
-            <div class="real_number">&nbsp;</div>
-            <div class="shape hidden"></div>
-            <div class="text_color hidden">&nbsp;</div>
-            <div class="text_shape hidden">&nbsp;</div>
-            <div class="inner_shape hidden"></div>
-            <div class="number hidden">&nbsp;</div>
-        </div>
+        </div> -->
 
 
 

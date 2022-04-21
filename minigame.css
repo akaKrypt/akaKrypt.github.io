@@ -55,6 +55,22 @@ body{
     width: 18px;
     text-align: right;
 }
+.option.boxes input{
+    vertical-align: text-top;
+}
+.boxes_value{
+    display: inline-block;
+    width: 18px;
+    text-align: right;
+}
+.option.prompts input{
+    vertical-align: text-top;
+}
+.prompts_value{
+    display: inline-block;
+    width: 18px;
+    text-align: right;
+}
 .fleeca .options.settings,
 .paleto .options.settings,
 .fleeca .option.speed,
@@ -133,8 +149,6 @@ body{
 .minigame{
     margin: 0 auto 20px;
     width: 1280px;
-    min-width: 1280px;
-    max-width: 1280px;
     height: 756px;
     min-height: 756px;
     max-height: 756px;
