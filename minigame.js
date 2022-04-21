@@ -175,21 +175,14 @@ document.querySelector('#boxes').addEventListener('input', function(ev){
 document.querySelector('#prompts').addEventListener('input', function(ev){
     document.querySelector('.prompts_value').innerHTML = ev.target.value;
 });
-document.querySelectorAll('.game_mode .button').forEach(el => {
-    el.addEventListener('click', function(ev){
-        let new_mode = ev.target.dataset.mode;
-        if(new_mode !== mode){
-            let b = document.querySelector('body').classL21ist;
-            b.remove(mode);
-            b.add(new_mode);
-            document.querySelector('.game_mode .button.active').classList.remove('active');
-            ev.target.classList.add('active');
-            mode = new_mode;
-            streak = 0;
-            reset(true);
-        }
-    });
-});
+
+let mute = document.querySelector('.option.audio .fa');
+audio_splash.muted = true;
+audio_timer.muted = true;
+mute.classList.add('muted');
+mute.innerHTML = '&#xf6a9;';
+
+
 document.querySelector('.option.audio').addEventListener('click', function(){
     let mute = document.querySelector('.option.audio .fa');
     if( mute.classList.contains('muted') ){
@@ -204,6 +197,20 @@ document.querySelector('.option.audio').addEventListener('click', function(){
         mute.innerHTML = '&#xf6a9;';
     }
 });
+
+
+
+function setParams(s,b,p){
+    document.querySelector('#speed').value = s;
+    document.querySelector('#boxes').value = b;
+    document.querySelector('#prompts').value = p;
+
+    document.querySelector('.speed_value').innerHTML = s + 's';
+    document.querySelector('.boxes_value').innerHTML = b;
+    document.querySelector('.prompts_value').innerHTML = p;
+
+}
+
 
 // Resets
 document.querySelector('.splash .btn_again').addEventListener('click', function(ev) {
@@ -263,9 +270,9 @@ document.querySelector('#answer').addEventListener('keydown', function(e) {
                 document.cookie = "max-streak="+max_streak;
             }
             let leaderboard = new XMLHttpRequest();
-            leaderboard.open("HEAD", 'streak.php?solution='+answer.replace(' ','_')
-                +'&streak='+streak+'&max_streak='+max_streak+'&speed='+(speed/1000)+'&mode='+mode);
-            leaderboard.send();
+            //leaderboard.open("HEAD", 'streak.php?solution='+answer.replace(' ','_')
+            //    +'&streak='+streak+'&max_streak='+max_streak+'&speed='+(speed/1000)+'&mode='+mode);
+           // leaderboard.send();
             if( (mode === 'fleeca' && streak === 4) || (mode === 'paleto' && streak === 6) ){
                 splash_screen();
                 document.querySelector('.splash .fa').innerHTML = '&#xf21b;';

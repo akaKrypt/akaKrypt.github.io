@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <title>NP Hacking Simulator</title>
-    <meta name="description" content="Simulator of NP Hacking, based off sharkkiller">
+    <meta name="description" content="Simulator of NP Hacking, updated version of SharkKillers.">
     <meta name="viewport" content="width=device-width, initial-scale=0.4">
-    <link rel="icon" type="image/png" href="favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/gif" href="3x.gif" sizes="32x32" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/solid.css" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="minigame.css?v=20210723">
     <script defer src="minigame.js?v=20210723"></script>
@@ -21,20 +21,20 @@
 <body class="practice">
 <div class="streaks">STREAK: <span class="streak">0</span> | MAX STREAK: <span class="max_streak">0</span></div>
 <div class="options">
-    <div class="option speed">
-        <label for="speed">Speed:</label>
-        <input id="speed" type="range" value="6" min="3" max="30" autocomplete="off">
-        <div class="speed_value">6s</div>
-    </div>
-    <div class="option boxes">
-        <label for="boxes">Boxes:</label>
-        <input id="boxes" type="range" value="4" min="4" max="12" autocomplete="off">
-        <div class="boxes_value">4</div>
-    </div>
     <div class="option prompts">
         <label for="prompts">Prompts:</label>
         <input id="prompts" type="range" value="3" min="2" max="4" autocomplete="off">
         <div class="prompts_value">3</div>
+    </div>
+    <div class="option boxes">
+        <label for="boxes">Boxes:</label>
+        <input id="boxes" type="range" value="5" min="4" max="12" autocomplete="off">
+        <div class="boxes_value">5</div>
+    </div>
+    <div class="option speed">
+        <label for="speed">Speed:</label>
+        <input id="speed" type="range" value="7" min="3" max="30" autocomplete="off">
+        <div class="speed_value">7s</div>
     </div>
     <div class="option game_mode" style="display:none">
         <span>Mode:</span>
@@ -42,7 +42,7 @@
         <button class="button" data-mode="fleeca">Fleeca</button>
         <button class="button" data-mode="paleto">Paleto</button>
     </div>
-    <div class="option audio" style="display:none">
+    <div class="option audio">
         <span class="fa">&#xf028;</span>
     </div>
 </div>
@@ -66,7 +66,7 @@
         <span class="message">NP Hacking</span>
         <button class="btn_again">START</button>
         <audio preload="auto">
-            <source src="audio_splash.ogg" type="audio/ogg">
+            <source src="" type="audio/ogg">
         </audio>
     </div>
     <div class="groups hidden" id="blockcontainer">
@@ -107,17 +107,17 @@
 <div class="options">
     <div class="option game_mode">
         <span>Presets:</span>
-        <button class="button" data-mode="fleeca">Fleeca/Paleto (3x5 6s)</button>
-        <button class="button" data-mode="fleeca">Vault (3x6 6s) Not Confirmed</button>
+        <button class="button" onclick="setParams(7,5,3)">Fleeca/Paleto (3x5 7s)</button>
+        <button class="button" onclick="setParams(7,6,3)">Vault (3x6 7s) Not Confirmed</button>
     </div>
 </div>
 <div class="options">
     <div class="option game_mode">
         <span>Presets (OLD):</span>
-        <button class="button" data-mode="fleeca">Fleeca/Paleto (2x4 5s)</button>
-        <button class="button" data-mode="fleeca">Vault (2x5 6s)</button>
-        <button class="button" data-mode="fleeca">Lower Vault (2x6 6s)</button>
-        <button class="button" data-mode="fleeca">Casino (3x8 8s)</button>
+        <button class="button" onclick="setParams(5,4,2)">Fleeca/Paleto (2x4 5s)</button>
+        <button class="button" onclick="setParams(6,5,2)">Vault (2x5 6s)</button>
+        <button class="button" onclick="setParams(6,6,2)">Lower Vault (2x6 6s)</button>
+        <button class="button" onclick="setParams(8,8,3)">Casino (3x8 8s)</button>
     </div>
 </div>
 <div class="options">

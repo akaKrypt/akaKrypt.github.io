@@ -209,7 +209,7 @@ var doWork = function() {
 
 // Define what to do if something goes wrong
 var doError = function() {
-    console.warn('The drift exceeded the interval.');
+    //console.warn('The drift exceeded the interval.');
 };
 
 // (The third argument is optional)
@@ -415,12 +415,12 @@ let start = () => {
     //document.querySelector(".progress-bar").style.width = width - 70
     ms = mstimer * 10
     sec = mstimer / 100
-    console.log(streak + " Current Streak")
-    console.log(sec + "s Elapsed")
+    //console.log(streak + " Current Streak")
+    //console.log(sec + "s Elapsed")
     avg = sec / streak
     hpm = (streak / sec) * 60
-    console.log("HPM " + hpm)
-    console.log("AVG " + avg + "s")
+    //console.log("HPM " + hpm)
+    //console.log("AVG " + avg + "s")
 
     if(first==0){
         first = 1
@@ -457,7 +457,7 @@ let start = () => {
     document.querySelector('.solution .real_numbers').innerHTML = data.real_numbers.join(' ');
     document.querySelector('.solution .solution_text').innerHTML = data.solution;
 
-    //document.querySelector('.streak').innerHTML = streak;
+    document.querySelector('.streak').innerHTML = streak;
     
     //document.querySelector('.max_streak').innerHTML = max_streak;
 
