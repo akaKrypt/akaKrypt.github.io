@@ -130,10 +130,10 @@ class NoPixel_Fleeca{
 
 
 
-        if(promptCount == 3){
+        if(promptCount == 2){
             minigame['solution'] = solution1 +' '+ solution2;
         }
-        else if(promptCount == 4){
+        else if(promptCount == 3){
             minigame['solution'] = solution1 +' '+ solution2 +' '+ solution3;
         }
         else{
