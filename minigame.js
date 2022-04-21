@@ -92,9 +92,11 @@ class NoPixel_Fleeca{
         let solution1 = minigame['groups'][quiz_numbers[0]][types[0]['type']];
         let solution2 = minigame['groups'][quiz_numbers[1]][types[1]['type']];
         let solution3 = minigame['groups'][quiz_numbers[2]][types[2]['type']];
+        let solution4 = minigame['groups'][quiz_numbers[3]][types[3]['type']];
         solution1 = solution1.replace(/\d/,'');
         solution2 = solution2.replace(/\d/,'');
         solution3 = solution3.replace(/\d/,'');
+        solution4 = solution4.replace(/\d/,'');
 
         minigame['quiz1'] = {
             'pos': quiz_numbers[0],
@@ -114,8 +116,31 @@ class NoPixel_Fleeca{
             'type': types[2],
             'solution': solution3
         };
+        
+        minigame['quiz4'] = {
+            'pos': quiz_numbers[3],
+            'type': types[3],
+            'solution': solution4
+        };
 
-        minigame['solution'] = solution1 +' '+ solution2 +' '+ solution3;
+        let promptCount = document.querySelector('#prompts').value;
+        let q2 = document.getElementById('question2')
+        let q3 = document.getElementById('question3')
+        let q4 = document.getElementById('question4')
+
+
+
+        if(promptCount == 3){
+            minigame['solution'] = solution1 +' '+ solution2;
+        }
+        else if(promptCount == 4){
+            minigame['solution'] = solution1 +' '+ solution2 +' '+ solution3;
+        }
+        else{
+            minigame['solution'] = solution1 +' '+ solution2 +' '+ solution3 + ' ' + solution4;
+        }
+
+        
 
         return minigame;
     }
@@ -191,6 +216,10 @@ document.querySelector('.answer .btn_again').addEventListener('click', function(
     reset();
 });
 // Selectors
+
+
+
+
 
 
 function createBox(n){
@@ -349,6 +378,23 @@ let start = () => {
     let width = 320 * boxes
     miniDiv.style.width = width.toString() + "px"
 
+    document.querySelector(".progress-bar").style.width = width - 70
+
+    let ques2 = 'ENTER THE <span class="quiz1">$nbsp;</span>, AND <span class="quiz2">$nbsp;</span>';
+    let ques3 = 'ENTER THE <span class="quiz1">$nbsp;</span>, <span class="quiz2">$nbsp;</span>, AND <span class="quiz3">$nbsp;</span>';
+    let ques4 = 'ENTER THE <span class="quiz1">$nbsp;</span>, <span class="quiz2">$nbsp;</span>, <span class="quiz3">$nbsp;</span>, AND <span class="quiz4">$nbsp;</span>';
+    let promptCount = document.querySelector('#prompts').value;
+    let quesCon = document.getElementById('question2');
+
+    if(promptCount == 2){
+        quesCon.innerHTML = ques2
+    }
+    else if(promptCount == 3){
+        quesCon.innerHTML = ques3
+    }
+    else{
+        quesCon.innerHTML = ques4
+    }
 
 
     data.groups.forEach(function(group, i) {
@@ -373,7 +419,8 @@ let start = () => {
 
     document.querySelector('.quiz1').innerHTML = data.quiz1.type.text + ' ('+data['real_numbers'][data.quiz1.pos]+')';
     document.querySelector('.quiz2').innerHTML = data.quiz2.type.text + ' ('+data['real_numbers'][data.quiz2.pos]+')';
-    document.querySelector('.quiz3').innerHTML = data.quiz3.type.text + ' ('+data['real_numbers'][data.quiz3.pos]+')';
+    try{document.querySelector('.quiz3').innerHTML = data.quiz3.type.text + ' ('+data['real_numbers'][data.quiz3.pos]+')';}catch(err){}
+    try{document.querySelector('.quiz4').innerHTML = data.quiz4.type.text + ' ('+data['real_numbers'][data.quiz4.pos]+')';}catch(err){}
 
     document.querySelector('.solution .real_numbers').innerHTML = data.real_numbers.join(' ');
     document.querySelector('.solution .solution_text').innerHTML = data.solution;

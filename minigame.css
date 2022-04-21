@@ -50,6 +50,7 @@ body{
 .option.speed input{
     vertical-align: text-top;
 }
+
 .speed_value{
     display: inline-block;
     width: 18px;
@@ -78,10 +79,12 @@ body{
     display: none;
 }
 .option.game_mode{
+    margin: 0px;
     padding: 0 0 0 20px;
     height: 40px;
     font-size: 0;
 }
+
 .option.game_mode span{
     font-size: 16px;
     padding-right: 14px;
@@ -154,6 +157,7 @@ body{
     max-height: 756px;
     background-color: #20282e;
     position: relative;
+    margin-bottom:50px;
 }
 .groups{
     display: flex;
