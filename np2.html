@@ -3,13 +3,12 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>NP Hacking Simulator</title>
+    <title>NP Hacking Rapidfire</title>
     <meta name="description" content="Simulator of NP Hacking, based off sharkkiller">
     <meta name="viewport" content="width=device-width, initial-scale=0.4">
-    <link rel="icon" type="image/png" href="favicon.ico" sizes="32x32" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/solid.css" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="minigame.css?v=20210723">
-    <script defer src="minigame.js?v=20210723"></script>
+    <link rel="stylesheet" type="text/css" href="minigame2.css?v=20210723">
+    <script defer src="minigame2.js?v=20210723"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52394643-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -19,8 +18,8 @@
     </script>
 </head>
 <body class="practice">
-<div class="streaks">STREAK: <span class="streak">0</span> | MAX STREAK: <span class="max_streak">0</span></div>
-<div class="options">
+    <div class="streaks"><span class="hpm">0</span> <font size="3px">Hacks Per Minute</font> | <span class="avg">0</span><font size="3px">s Avg</font></div>
+<div class="options" style="display:none">
     <div class="option speed">
         <label for="speed">Speed:</label>
         <input id="speed" type="range" value="6" min="3" max="15" autocomplete="off">
@@ -63,21 +62,21 @@
 <div class="minigame" id="minigame2">
     <div class="splash">
         <div class="fa hacker">&#xf21b;</div>
-        <span class="message">NP Hacking</span>
-        <button class="btn_again">START</button>
+        <span class="message">NP Hacking Rapidfire</span>
+        <button class="btn_again">PRESS SPACE TO START</button>
         <audio preload="auto">
-            <source src="audio_splash.ogg" type="audio/ogg">
+            <source src="" type="audio/ogg">
         </audio>
     </div>
     <div class="groups hidden" id="blockcontainer">
-        <!-- <div class="group">
+        <div class="group">
             <div class="real_number">&nbsp;</div>
             <div class="shape hidden"></div>
             <div class="text_color hidden">&nbsp;</div>
             <div class="text_shape hidden">&nbsp;</div>
             <div class="inner_shape hidden"></div>
             <div class="number hidden">&nbsp;</div>
-        </div> -->
+        </div>
 
 
 
@@ -85,47 +84,29 @@
     <div class="timer hidden">
         <div class="progress active"><div class="progress-bar timer-progress"></div></div>
         <audio preload="auto" loop>
-            <source src="audio_timer.ogg" type="audio/ogg">
+            <source src="" type="audio/ogg">
         </audio>
     </div>
     <div class="solution hidden">
         Real numbers: <span class="real_numbers">&nbsp;</span><br>
         Solution: <span class="solution_text">&nbsp;</span>
     </div>
-    <div class="question hidden" id="question2">
-        
+    <div class="question hidden">
+        ENTER THE <span class="quiz1"></span>
     </div>
     <div class="answer hidden">
         <div class="answer-wrapper">
             <label for="answer">Answer</label>
-            <input id="answer" type="text" autocomplete="off" placeholder="blue square" autofocus>
+            <input id="answer" type="text" autocomplete="off" placeholder="" autofocus>
         </div>
-        <button class="btn_again">AGAIN!</button>
-    </div>
-    
-</div>
-<div class="options">
-    <div class="option game_mode">
-        <span>Presets:</span>
-        <button class="button" data-mode="fleeca">Fleeca/Paleto (3x5 6s)</button>
-        <button class="button" data-mode="fleeca">Vault (3x6 6s) Not Confirmed</button>
-    </div>
-</div>
-<div class="options">
-    <div class="option game_mode">
-        <span>Presets (OLD):</span>
-        <button class="button" data-mode="fleeca">Fleeca/Paleto (2x4 5s)</button>
-        <button class="button" data-mode="fleeca">Vault (2x5 6s)</button>
-        <button class="button" data-mode="fleeca">Lower Vault (2x6 6s)</button>
-        <button class="button" data-mode="fleeca">Casino (3x8 8s)</button>
+        <button class="btn_again">Reset</button>
     </div>
 </div>
 <div class="options">
     <div class="option game_mode">
         <span>Other Modes:</span>
-        <button class="button" onclick="window.location.href='/np2'">Rapidfire Practice</button>
+        <button class="button" onclick="window.location.href='/np'">Standard Hacking</button>
     </div>
 </div>
-
 </body>
 </html>
