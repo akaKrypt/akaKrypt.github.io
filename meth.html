@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8" />
+<title>NP Meth Calculator</title>
+<meta name="description" content="Calculator for NP Meth">
+<meta name="viewport" content="width=device-width, initial-scale=0.4">
+<link rel="icon" type="image/gif" href="3x.gif" sizes="32x32" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/solid.css" crossorigin="anonymous">
+<link rel="stylesheet" href="meth.css">
+<link rel="stylesheet" href="slider.css">
+
+
+<body>
+    <div class="containerbig">
+
+        <div class="container">
+
+            <div class="tut">
+
+                <span class="text">NP Meth Calculator</span><br><br>
+
+                <span class="text2">Select Meth Level</span>
+                <span class="text3">(0 = 60 Max Purity, 1/2 = 75 Max Purity)</span>
+                <br>
+                <div class="methcon">
+                    <span class="methsel" id="methsel">0</span>
+                    <input type="range" class="slider slider-progress" id="methlevel" value="0" min="0" max="2">
+                </div>
+                <br>
+                <span class="text2">Complete 3 cooks using the formulas below.<br>Enter the purity from the
+                    corresponding cooks into the boxes below it.</span>
+
+
+            </div>
+
+            <div class="cooks">
+                <div class="cook">
+                    <input class="slider slider-progress" id="slider1" type="range" value="0" min="0" max="99"
+                        style="margin-left:0px;">
+                    <input class="slider slider-progress" id="slider2" type="range" value="99" min="0" max="99"
+                        style="margin-left:28px;">
+                    <input class="slider slider-progress" id="slider3" type="range" value="99" min="0" max="99"
+                        style="margin-left:56px;">
+
+                    <div class="textcontainer">
+                        <div class="textholder">
+                            <span class="progress" id="progress1">0</span>
+                            <span class="progress" id="progress2">99</span>
+                            <span class="progress" id="progress3">99</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cook">
+                    <input class="slider slider-progress" id="slider4" type="range" value="99" min="0" max="99"
+                        style="margin-left:0px;">
+                    <input class="slider slider-progress" id="slider5" type="range" value="0" min="0" max="99"
+                        style="margin-left:28px;">
+                    <input class="slider slider-progress" id="slider6" type="range" value="99" min="0" max="99"
+                        style="margin-left:56px;">
+
+                    <div class="textcontainer">
+                        <div class="textholder">
+                            <span class="progress" id="progress4">99</span>
+                            <span class="progress" id="progress5">0</span>
+                            <span class="progress" id="progress6">99</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cook">
+                    <input class="slider slider-progress" id="slider7" type="range" value="99" min="0" max="99"
+                        style="margin-left:0px;">
+                    <input class="slider slider-progress" id="slider8" type="range" value="99" min="0" max="99"
+                        style="margin-left:28px;">
+                    <input class="slider slider-progress" id="slider9" type="range" value="0" min="0" max="99"
+                        style="margin-left:56px;">
+
+                    <div class="textcontainer">
+                        <div class="textholder">
+                            <span class="progress" id="progress7">99</span>
+                            <span class="progress" id="progress8">99</span>
+                            <span class="progress" id="progress9">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qcon">
+
+                <input id="input1" class="inputs" type=”number” placeholder="Purity 1">
+                <input id="input2" class="inputs" type=”number” placeholder="Purity 2">
+                <input id="input3" class="inputs" type=”number” placeholder="Purity 3">
+                <div class="cook">
+                    <input class="slider slider-progress" id="sliderr1" type="range" value="0" min="0" max="99"
+                        style="margin-left:0px;">
+                    <input class="slider slider-progress" id="sliderr2" type="range" value="0" min="0" max="99"
+                        style="margin-left:28px;">
+                    <input class="slider slider-progress" id="sliderr3" type="range" value="0" min="0" max="99"
+                        style="margin-left:56px;">
+
+                    <div class="textcontainer">
+                        <div class="textholder">
+                            <span class="progress" id="progressr1">0</span>
+                            <span class="progress" id="progressr2">0</span>
+                            <span class="progress" id="progressr3">0</span>
+                            <span class="text4" id="warning">Enter Valid Purities</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <span class="text3" style="display:block;margin-top:40px;">Results may vary. Purities averaged down results
+                in
+                +/- 1-2 ticks per slider.</span>
+        </div>
+
+
+    </div>
+
+    </div>
+    <script src="meth.js">
+    </script>
+
+
+</body>
+
+</html>

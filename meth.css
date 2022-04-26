@@ -1,0 +1,163 @@
+body {
+    text-align: center;
+    background-color: #15181d;
+}
+
+
+.containerbig {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container {
+    margin: 0 auto 20px;
+    width: 960px;
+    height: 1150px;
+    background-color: #20282e;
+    position: relative;
+    margin-bottom: 0px;
+}
+
+.qcon {
+    width: 80%;
+    height: 200px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.tut {
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.inputs {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 28px;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-variant: small-caps;
+    background-color: #20282e;
+    opacity: 100%;
+    border-color: #cccccc;
+    text-align: center;
+    font-size: 18px;
+    padding: 4px;
+    border-radius: 12px;
+    border-width: 0px;
+    border-style: hidden;
+    box-shadow: 0px 0px 6px 0px rgba(255, 255, 255, 0.678);
+    width: 100px;
+    margin-inline: 50px;
+}
+
+.text {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 28px;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-variant: small-caps;
+}
+
+.text2 {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-variant: small-caps;
+
+}
+
+.text3 {
+    text-align: center;
+    color: #ffffffa2;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: Bold;
+}
+
+.cooks {
+    width: 960px;
+    height: 380px;
+}
+
+.cook {
+    margin-top: 30px;
+    margin-inline: 21px;
+    display: inline-block;
+    height: 380px;
+    width: 168px;
+    background-color: #232731;
+    box-shadow: 0px 0px 10px 0px #000000;
+}
+
+.slider.slider-progress:not(#methlevel) {
+    transform: rotate(270deg) translateX(-179px) translateY(-81px);
+    margin-top: -4px;
+    display: table;
+    margin-right: -50px;
+}
+
+.textcontainer {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.textholder {
+    display: inline-block;
+    margin-top: 315px;
+    height: 50px;
+    width: 120px;
+    vertical-align: bottom;
+}
+
+.progress {
+    display: inline-block;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-variant: small-caps;
+    width: 24px;
+    margin: 0px;
+}
+
+.methsel {
+    color: #FFFFFF;
+    font-size: 23px;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-variant: small-caps;
+    margin-top: 10px;
+}
+
+.methcon {
+    margin-top: 5px;
+    vertical-align: middle;
+    height: 30px;
+
+}
+
+#methlevel {
+    margin-top: 17px;
+    vertical-align: top;
+}
+
+.text4 {
+    display: block;
+    margin-top: 4px;
+    text-align: center;
+    color: #c05656;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: Bold;
+}
