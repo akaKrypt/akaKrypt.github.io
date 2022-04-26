@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <title>NP Hacking Simulator</title>
@@ -13,64 +13,65 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52394643-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'UA-52394643-1');
     </script>
 </head>
+
 <body class="practice">
-<div class="streaks">STREAK: <span class="streak">0</span> | MAX STREAK: <span class="max_streak">0</span></div>
-<div class="options">
-    <div class="option prompts">
-        <label for="prompts">Prompts:</label>
-        <input id="prompts" type="range" value="3" min="2" max="4" autocomplete="off">
-        <div class="prompts_value">3</div>
+    <div class="streaks">STREAK: <span class="streak">0</span> | MAX STREAK: <span class="max_streak">0</span></div>
+    <div class="options">
+        <div class="option prompts">
+            <label for="prompts">Prompts:</label>
+            <input id="prompts" type="range" value="3" min="2" max="4" autocomplete="off">
+            <div class="prompts_value">3</div>
+        </div>
+        <div class="option boxes">
+            <label for="boxes">Boxes:</label>
+            <input id="boxes" type="range" value="5" min="4" max="12" autocomplete="off">
+            <div class="boxes_value">5</div>
+        </div>
+        <div class="option speed">
+            <label for="speed">Speed:</label>
+            <input id="speed" type="range" value="7" min="3" max="30" autocomplete="off">
+            <div class="speed_value">7s</div>
+        </div>
+        <div class="option game_mode" style="display:none">
+            <span>Mode:</span>
+            <button class="button active" data-mode="practice">Practice</button>
+            <button class="button" data-mode="fleeca">Fleeca</button>
+            <button class="button" data-mode="paleto">Paleto</button>
+        </div>
+        <div class="option audio">
+            <span class="fa">&#xf028;</span>
+        </div>
     </div>
-    <div class="option boxes">
-        <label for="boxes">Boxes:</label>
-        <input id="boxes" type="range" value="5" min="4" max="12" autocomplete="off">
-        <div class="boxes_value">5</div>
+    <div class="options settings" style="display:none">
+        <div class="option setting">
+            <label><input id="option1" type="checkbox" checked="checked">
+                Invert texts on start</label>
+        </div>
+        <div class="option setting">
+            <label><input id="option2" type="checkbox">
+                Invert texts while writing</label>
+        </div>
+        <div class="option setting">
+            <label><input id="option3" type="checkbox">
+                Show question with original numbers</label>
+        </div>
     </div>
-    <div class="option speed">
-        <label for="speed">Speed:</label>
-        <input id="speed" type="range" value="7" min="3" max="30" autocomplete="off">
-        <div class="speed_value">7s</div>
-    </div>
-    <div class="option game_mode" style="display:none">
-        <span>Mode:</span>
-        <button class="button active" data-mode="practice">Practice</button>
-        <button class="button" data-mode="fleeca">Fleeca</button>
-        <button class="button" data-mode="paleto">Paleto</button>
-    </div>
-    <div class="option audio">
-        <span class="fa">&#xf028;</span>
-    </div>
-</div>
-<div class="options settings" style="display:none">
-    <div class="option setting">
-        <label><input id="option1" type="checkbox" checked="checked">
-            Invert texts on start</label>
-    </div>
-    <div class="option setting">
-        <label><input id="option2" type="checkbox">
-            Invert texts while writing</label>
-    </div>
-    <div class="option setting">
-        <label><input id="option3" type="checkbox">
-            Show question with original numbers</label>
-    </div>
-</div>
-<div class="minigame" id="minigame2">
-    <div class="splash">
-        <div class="fa hacker">&#xf21b;</div>
-        <span class="message">NP Hacking</span>
-        <button class="btn_again">START</button>
-        <audio preload="auto">
-            <source src="" type="audio/ogg">
-        </audio>
-    </div>
-    <div class="groups hidden" id="blockcontainer">
-        <!-- <div class="group">
+    <div class="minigame" id="minigame2">
+        <div class="splash">
+            <div class="fa hacker">&#xf21b;</div>
+            <span class="message">NP Hacking</span>
+            <button class="btn_again">START</button>
+            <audio preload="auto">
+                <source src="" type="audio/ogg">
+            </audio>
+        </div>
+        <div class="groups hidden" id="blockcontainer">
+            <!-- <div class="group">
             <div class="real_number">&nbsp;</div>
             <div class="shape hidden"></div>
             <div class="text_color hidden">&nbsp;</div>
@@ -81,51 +82,55 @@
 
 
 
-    </div>
-    <div class="timer hidden">
-        <div class="progress active"><div class="progress-bar timer-progress"></div></div>
-        <audio preload="auto" loop>
-            <source src="audio_timer.ogg" type="audio/ogg">
-        </audio>
-    </div>
-    <div class="solution hidden">
-        Real numbers: <span class="real_numbers">&nbsp;</span><br>
-        Solution: <span class="solution_text">&nbsp;</span>
-    </div>
-    <div class="question hidden" id="question2">
-        
-    </div>
-    <div class="answer hidden">
-        <div class="answer-wrapper">
-            <label for="answer">Answer</label>
-            <input id="answer" type="text" autocomplete="off" placeholder="blue square" autofocus>
         </div>
-        <button class="btn_again">AGAIN!</button>
+        <div class="timer hidden">
+            <div class="progress active">
+                <div class="progress-bar timer-progress"></div>
+            </div>
+            <audio preload="auto" loop>
+                <source src="audio_timer.ogg" type="audio/ogg">
+            </audio>
+        </div>
+        <div class="solution hidden">
+            Real numbers: <span class="real_numbers">&nbsp;</span><br>
+            Solution: <span class="solution_text">&nbsp;</span>
+        </div>
+        <div class="question hidden" id="question2">
+
+        </div>
+        <div class="answer hidden">
+            <div class="answer-wrapper">
+                <label for="answer">Answer</label>
+                <input id="answer" type="text" autocomplete="off" placeholder="blue square" autofocus>
+            </div>
+            <button class="btn_again">AGAIN!</button>
+        </div>
+
     </div>
-    
-</div>
-<div class="options">
-    <div class="option game_mode">
-        <span>Presets:</span>
-        <button class="button" onclick="setParams(7,5,3)">Fleeca/Paleto (3x5 7s)</button>
-        <button class="button" onclick="setParams(7,6,3)">Vault (3x6 7s) Not Confirmed</button>
+    <div class="options">
+        <div class="option game_mode">
+            <span>Presets:</span>
+            <button class="button" onclick="setParams(7,5,3)">Fleeca/Paleto (3x5 7s)</button>
+            <button class="button" onclick="setParams(5,5,3)">Vault (3x5 5s) Not Confirmed</button>
+            <button class="button" onclick="setParams(5,5,3)">Yacht (3x5 5s)</button>
+        </div>
     </div>
-</div>
-<div class="options">
-    <div class="option game_mode">
-        <span>Presets (OLD):</span>
-        <button class="button" onclick="setParams(5,4,2)">Fleeca/Paleto (2x4 5s)</button>
-        <button class="button" onclick="setParams(6,5,2)">Vault (2x5 6s)</button>
-        <button class="button" onclick="setParams(6,6,2)">Lower Vault (2x6 6s)</button>
-        <button class="button" onclick="setParams(8,8,3)">Casino (3x8 8s)</button>
+    <div class="options">
+        <div class="option game_mode">
+            <span>Presets (OLD):</span>
+            <button class="button" onclick="setParams(5,4,2)">Fleeca/Paleto (2x4 5s)</button>
+            <button class="button" onclick="setParams(6,5,2)">Vault (2x5 6s)</button>
+            <button class="button" onclick="setParams(6,6,2)">Lower Vault (2x6 6s)</button>
+            <button class="button" onclick="setParams(8,8,3)">Casino (3x8 8s)</button>
+        </div>
     </div>
-</div>
-<div class="options">
-    <div class="option game_mode">
-        <span>Other Modes:</span>
-        <button class="button" onclick="window.location.href='/np2'">Rapidfire Practice</button>
+    <div class="options">
+        <div class="option game_mode">
+            <span>Other Modes:</span>
+            <button class="button" onclick="window.location.href='/np2'">Rapidfire Practice</button>
+        </div>
     </div>
-</div>
 
 </body>
+
 </html>

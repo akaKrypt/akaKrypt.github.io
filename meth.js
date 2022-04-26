@@ -77,9 +77,6 @@ function calculate(mb, n1b, n2b, n3b) {
     n1 = parseInt(n1b)
     n2 = parseInt(n2b)
     n3 = parseInt(n3b)
-
-    console.log(m + " " + n1 + " " + n2 + " " + n3)
-
     x1 = ((((3 * (n2 + n3)) / 2) - m) / m) * 99;
     x2 = ((((3 * (n2 + n3 + 2)) / 2) - m) / m) * 99;
     y1 = ((((3 * (n1 + n3)) / 2) - m) / m) * 99;
@@ -89,10 +86,7 @@ function calculate(mb, n1b, n2b, n3b) {
     e1 = ((((3 * (n2 + n3 + 1)) / 2) - m) / m) * 99;
     e2 = ((((3 * (n1 + n3 + 1)) / 2) - m) / m) * 99;
     e3 = ((((3 * (n1 + n2 + 1)) / 2) - m) / m) * 99;
-    console.log("asd1")
-    console.log(e1.toString() + e2.toString() + e3.toString())
     if (e1 > 0 && e1 < 100 && e2 > 0 && e2 < 100 && e3 > 0 && e3 < 100) {
-        console.log("asd2")
         document.querySelector('#progressr1').innerHTML = Math.round(e1).toString();
         document.querySelector('#progressr2').innerHTML = Math.round(e2).toString();
         document.querySelector('#progressr3').innerHTML = Math.round(e3).toString();
